@@ -1,25 +1,32 @@
-🛡️ SOC Investigation — Suspicious Login Activity
-Case Study: Unauthorized Access Attempt in Microsoft 365
+# 🛡️ SOC Investigation — Suspicious Login Activity
+**Case Study: Unauthorized Access Attempt in Microsoft 365**
 
-📘 Scenario Overview
-A small business uses Microsoft 365 for identity and email. The SOC receives an alert indicating multiple failed login attempts followed by a successful login from an unusual location. The user confirms they were asleep at the time of the successful authentication.
+---
 
-Field	Details
-User	jane.harris@brisbanetech.com.au
-Normal Location	Brisbane, QLD
-Suspicious Location	Singapore
-Time of Alert	02:14 AEST
-Alert Source	Azure AD Identity Protection
-Authentication Method	Password only (no MFA enabled)
-🔍 Initial Log Review (Azure Sentinel)
-KQL Query Used
-kql
+## 📘 Scenario Overview
+A small business uses Microsoft 365 for identity and email. The SOC receives an alert indicating **multiple failed login attempts** followed by a **successful login from an unusual location**. The user confirms they were **asleep** at the time of the successful authentication.
+
+### **User & Alert Details**
+
+| Field                   | Details                          |
+|-------------------------|----------------------------------|
+| **User**                | jane.harris@brisbanetech.com.au  |
+| **Normal Location**     | Brisbane, QLD                    |
+| **Suspicious Location** | Singapore                        |
+| **Time of Alert**       | 02:14 AEST                       |
+| **Alert Source**        | Azure AD Identity Protection     |
+| **Authentication Method** | Password only (no MFA)         |
+
+---
+
+## 🔍 Initial Log Review (Azure Sentinel)
+
+### **KQL Query Used**
+```kql
 SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
 | project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
 Sample Output
-(Extracted from the page you’re editing )
-
 TimeGenerated (AEST)	UserPrincipalName	IPAddress	Location	ResultType	ResultDescription
 2024‑11‑12 02:06:14.221	jane.harris@brisbanetech.com.au	203.0.113.55	Singapore	50053	Invalid username or password
 2024‑11‑12 02:06:47.902	jane.harris@brisbanetech.com.au	203.0.113.55	Singapore	50053	Invalid username or password
@@ -80,16 +87,14 @@ Enable risk‑based sign‑in alerts
 Educate users on password hygiene
 
 📁 Future Enhancements for This Repo
-If you want, I can help you add:
+Full SOC investigation template
 
-A full SOC investigation template
+Triage flowchart
 
-A triage flowchart
+MITRE ATT&CK mapping
 
-A MITRE ATT&CK mapping
+KQL cheat sheet
 
-A KQL cheat sheet
-
-A “How to write a SOC case study” guide
+“How to write a SOC case study” guide
 
 Additional scenarios (phishing, malware, insider threat, etc.)
