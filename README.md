@@ -150,17 +150,4 @@ flowchart TD
     G --> H[Recovery and MFA enforcement]
 ```
    
-```
-soc-investigation-suspicious-logins/
-├── README.md                     # Main case study
-├── diagrams/
-│   └── incident-flow.mmd         # Mermaid diagrams
-├── logs/
-│   └── sample-signinlogs.csv     # Sanitised log samples (optional)
-├── queries/
-│   └── signinlogs-query.kql      # KQL queries used in investigation
-├── reports/
-│   └── analyst-summary.md        # Optional extended report
-└── artifacts/
-    └── ioc-list.txt              # Indicators of compromise
-```
+
