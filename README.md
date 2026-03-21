@@ -1,6 +1,9 @@
 #  SOC Investigation — Suspicious Login Activity
 **Case Study: Unauthorized Access Attempt in Microsoft 365**
 
+## Case Summary
+A user account belonging to a Brisbane-based employee showed multiple failed login attempts from a foreign IP address, followed by a successful authentication while the user was asleep. The activity originated from Singapore and occurred in the absence of MFA, strongly indicating credential compromise. Immediate containment and investigation actions were required to secure the account and prevent lateral movement.
+
 ---
 
 ##  Scenario Overview
@@ -111,3 +114,46 @@ KQL cheat sheet
 “How to write a SOC case study” guide
 
 Additional scenarios (phishing, malware, insider threat, etc.)
+
+## 🕒 Timeline of Events
+
+| Time (AEST)            | Event Description                                      |
+|------------------------|--------------------------------------------------------|
+| 02:06:14               | Failed login attempt from Singapore (203.0.113.55)     |
+| 02:06:47               | Failed login attempt from same IP                      |
+| 02:07:12               | Failed login attempt from same IP                      |
+| 02:07:45               | Failed login attempt from same IP                      |
+| 02:14:00 (approx.)     | Successful login from Singapore                        |
+| 08:00                  | User reports they were asleep during the activity      |
+| 08:10                  | SOC initiates investigation and containment actions     |
+
+## 🧬 MITRE ATT&CK Mapping
+
+| Tactic              | Technique                     | ID        | Relevance to Case                                      |
+|---------------------|-------------------------------|-----------|--------------------------------------------------------|
+| Initial Access      | Valid Accounts                | T1078     | Attacker used compromised credentials to log in        |
+| Credential Access   | Credential Stuffing / Spraying| T1110     | Multiple failed attempts indicate password attacks     |
+| Defense Evasion     | Valid Accounts                | T1078.004 | Successful login using legitimate credentials          |
+| Discovery           | Account Discovery             | T1087     | Possible enumeration attempts prior to login           |
+| Impact (Potential)  | Account Manipulation          | T1098     | Risk of mailbox rule creation or persistence           |
+
+flowchart TD
+    A[Attacker attempts login from Singapore] --> B[Multiple failed attempts]
+    B --> C[Successful login]
+    C --> D[User asleep - activity confirmed suspicious]
+    D --> E[SOC receives alert]
+    E --> F[Containment actions: reset password, revoke sessions]
+    F --> G[Investigation: logs, mailbox rules, audit review]
+    G --> H[Recovery and MFA enforcement]
+soc-investigation-suspicious-logins/
+├── README.md                     # Main case study
+├── diagrams/
+│   └── incident-flow.mmd         # Mermaid diagrams
+├── logs/
+│   └── sample-signinlogs.csv     # Sanitised log samples (optional)
+├── queries/
+│   └── signinlogs-query.kql      # KQL queries used in investigation
+├── reports/
+│   └── analyst-summary.md        # Optional extended report
+└── artifacts/
+    └── ioc-list.txt              # Indicators of compromise
