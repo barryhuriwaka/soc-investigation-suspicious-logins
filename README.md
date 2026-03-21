@@ -69,8 +69,11 @@ Compromised credentials via phishing or breach reuse
 
 ### Containment
  Force password reset for the affected user
+ 
  Revoke active sessions in Azure AD
+ 
  Block the suspicious IP address
+ 
  Enable MFA immediately
 
 ### Investigation
