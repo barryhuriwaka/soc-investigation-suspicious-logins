@@ -11,12 +11,13 @@ A small business uses Microsoft 365 for identity and email. The SOC receives an 
 
 | Field                   | Details                          |
 |-------------------------|----------------------------------|
-| **User**                | jane.harris@brisbanetech.com.au  |
-| **Normal Location**     | Brisbane, QLD                    |
-| **Suspicious Location** | Singapore                        |
-| **Time of Alert**       | 02:14 AEST                       |
-| **Alert Source**        | Azure AD Identity Protection     |
-| **Authentication Method** | Password only (no MFA)         |
+| User                    | jane.harris@brisbanetech.com.au  |
+| Normal Location         | Brisbane, QLD                    |
+| Suspicious Location     | Singapore                        |
+| Time of Alert           | 02:14 AEST                       |
+| Alert Source            | Azure AD Identity Protection     |
+| Authentication Method   | Password only (no MFA)           |
+
 
 
 
