@@ -145,6 +145,7 @@ flowchart TD
     E --> F[Containment actions: reset password, revoke sessions]
     F --> G[Investigation: logs, mailbox rules, audit review]
     G --> H[Recovery and MFA enforcement]
+    
 soc-investigation-suspicious-logins/
 ├── README.md                     # Main case study
 ├── diagrams/
