@@ -39,6 +39,7 @@ SigninLogs
 | 2024‑11‑12 02:07:45.118    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
 
 Analyst Assessment
+
 Indicators of Compromise
 
 Multiple failed attempts from a foreign IP
