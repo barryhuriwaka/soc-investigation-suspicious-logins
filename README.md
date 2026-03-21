@@ -149,5 +149,33 @@ flowchart TD
     F --> G[Investigation: logs, mailbox rules, audit review]
     G --> H[Recovery and MFA enforcement]
 ```
-   
+diagrams/incident-flow.mmd
+flowchart TD
+    A[Attacker attempts login from Singapore] --> B[Multiple failed attempts]
+    B --> C[Successful login]
+    C --> D[User asleep - activity confirmed suspicious]
+    D --> E[SOC receives alert]
+    E --> F[Containment actions: reset password, revoke sessions]
+    F --> G[Investigation: logs, mailbox rules, audit review]
+    G --> H[Recovery and MFA enforcement]
+## 📁 Repository Structure
+
+```
+soc-investigation-suspicious-logins/
+├── README.md
+├── diagrams/
+│   └── incident-flow.mmd
+├── logs/
+│   └── sample-signinlogs.csv
+├── queries/
+│   └── signinlogs-query.kql
+├── reports/
+│   └── analyst-summary.md
+└── artifacts/
+    └── ioc-list.txt
+```
+logs/sample-signinlogs.csv
+queries/signinlogs-query.kql
+reports/analyst-summary.md
+
 
