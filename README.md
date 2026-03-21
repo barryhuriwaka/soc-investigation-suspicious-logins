@@ -40,9 +40,9 @@ SigninLogs
 | 2024‑11‑12 02:07:12.443    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
 | 2024‑11‑12 02:07:45.118    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
 
-Analyst Assessment
+## Analyst Assessment
 
-Indicators of Compromise
+### Indicators of Compromise
 
 Multiple failed attempts from a foreign IP
 
@@ -52,7 +52,7 @@ User confirms no activity at that time
 
 No MFA enabled (high‑risk configuration)
 
-Likely Attack Pattern
+### Likely Attack Pattern
 
 This behaviour aligns with:
 
@@ -62,15 +62,15 @@ Credential stuffing
 
 Compromised credentials via phishing or breach reuse
 
-Recommended Immediate Actions
+## Recommended Immediate Actions
 
-1. Containment
-2. Force password reset for the affected user
-3. Revoke active sessions in Azure AD
-4. Block the suspicious IP address
-5. Enable MFA immediately
+### Containment
+ Force password reset for the affected user
+ Revoke active sessions in Azure AD
+ Block the suspicious IP address
+ Enable MFA immediately
 
-Investigation
+### Investigation
 
 Review sign‑in logs for lateral movement
 
@@ -80,7 +80,7 @@ Review audit logs for privilege escalation
 
 Search for additional failed attempts across tenant
 
-Recovery
+### Recovery
 
 Confirm user identity and secure account
 
@@ -88,7 +88,7 @@ Validate no unauthorized changes were made
 
 Re‑enable access with MFA enforced
 
-Lessons Learned
+### Lessons Learned
    
 Enforce MFA tenant‑wide
 
@@ -98,7 +98,7 @@ Enable risk‑based sign‑in alerts
 
 Educate users on password hygiene
 
-Future Enhancements for This Repo
+## Future Enhancements for This Repo
 
 Full SOC investigation template
 
