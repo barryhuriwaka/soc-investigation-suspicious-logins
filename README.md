@@ -6,6 +6,7 @@
 ##  Scenario Overview
 A small business uses Microsoft 365 for identity and email. The SOC receives an alert indicating multiple failed login attempts followed by a successful login from an unusual location. The user confirms they were asleep at the time of the successful authentication.
 
+
 ### **User & Alert Details**
 
 | Field                   | Details                          |
@@ -19,7 +20,9 @@ A small business uses Microsoft 365 for identity and email. The SOC receives an 
 
 
 
+
 ## 🔍 Initial Log Review (Azure Sentinel)
+
 
 ### **KQL Query Used**
 ```
@@ -27,6 +30,7 @@ SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
 | project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
 ```
+
 | TimeGenerated (AEST)       | UserPrincipalName               | IPAddress     | Location  | ResultType | ResultDescription            |
 |----------------------------|----------------------------------|---------------|-----------|------------|------------------------------|
 | 2024‑11‑12 02:06:14.221    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
@@ -35,7 +39,6 @@ SigninLogs
 | 2024‑11‑12 02:07:45.118    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
 
 Analyst Assessment
-
 Indicators of Compromise
 
 Multiple failed attempts from a foreign IP
@@ -59,18 +62,14 @@ Compromised credentials via phishing or breach reuse
 Recommended Immediate Actions
 
 1. Containment
-2. 
-Force password reset for the affected user
+2. Force password reset for the affected user
+3. Revoke active sessions in Azure AD
+4. Block the suspicious IP address
+5. Enable MFA immediately
 
-Revoke active sessions in Azure AD
+Investigation
 
-Block the suspicious IP address
-
-Enable MFA immediately
-
-4. Investigation
-
-5. Review sign‑in logs for lateral movement
+Review sign‑in logs for lateral movement
 
 Check mailbox rules for forwarding or deletion
 
@@ -78,14 +77,15 @@ Review audit logs for privilege escalation
 
 Search for additional failed attempts across tenant
 
-6. Recovery
+Recovery
+
 Confirm user identity and secure account
 
 Validate no unauthorized changes were made
 
 Re‑enable access with MFA enforced
 
-8. Lessons Learned
+Lessons Learned
    
 Enforce MFA tenant‑wide
 
