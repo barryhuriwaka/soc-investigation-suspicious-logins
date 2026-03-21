@@ -147,7 +147,8 @@ flowchart TD
     D --> E[SOC receives alert]
     E --> F[Containment actions: reset password, revoke sessions]
     F --> G[Investigation: logs, mailbox rules, audit review]
-    G --> H[Recovery and MFA enforcement]```
+    G --> H[Recovery and MFA enforcement]
+```
 
  ```   
 soc-investigation-suspicious-logins/
