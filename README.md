@@ -169,8 +169,6 @@ soc-investigation-suspicious-logins/
 └── artifacts/
     └── ioc-list.txt
 ```
-logs/sample-signinlogs.csv
-queries/signinlogs-query.kql
-reports/analyst-summary.md
+
 
 
