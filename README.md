@@ -31,6 +31,7 @@ SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
 | project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
 ```
+### **Sample Output**
 
 | TimeGenerated (AEST)       | UserPrincipalName               | IPAddress     | Location  | ResultType | ResultDescription            |
 |----------------------------|----------------------------------|---------------|-----------|------------|------------------------------|
