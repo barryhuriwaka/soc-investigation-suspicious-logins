@@ -150,7 +150,8 @@ flowchart TD
     G --> H[Recovery and MFA enforcement]
 ```
    
-```soc-investigation-suspicious-logins/
+```
+soc-investigation-suspicious-logins/
 ├── README.md                     # Main case study
 ├── diagrams/
 │   └── incident-flow.mmd         # Mermaid diagrams
