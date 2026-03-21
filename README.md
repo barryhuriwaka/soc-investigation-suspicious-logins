@@ -137,6 +137,9 @@ Additional scenarios (phishing, malware, insider threat, etc.)
 | Discovery           | Account Discovery             | T1087     | Possible enumeration attempts prior to login           |
 | Impact (Potential)  | Account Manipulation          | T1098     | Risk of mailbox rule creation or persistence           |
 
+## 📊 Incident Flow Diagram (Mermaid)
+
+```mermaid
 flowchart TD
     A[Attacker attempts login from Singapore] --> B[Multiple failed attempts]
     B --> C[Successful login]
