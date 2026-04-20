@@ -33,13 +33,13 @@ A Brisbane‑based employee’s Microsoft 365 account showed multiple failed log
 
 + Provide remediation and long‑term recommendations
 
-|_______________________|__________________________|
+| _____________________ | ________________________ |
 |                       |                          |
 |                       |                          |
 |                       |                          |
 |                       |                          |
 |                       |                          |
-|_______________________|__________________________|
+| _____________________ | ________________________ |
 
 ## Case Summary
 A user account belonging to a Brisbane-based employee showed multiple failed login attempts from a foreign IP address, followed by a successful authentication while the user was asleep. The activity originated from Singapore and occurred in the absence of MFA, strongly indicating credential compromise. Immediate containment and investigation actions were required to secure the account and prevent lateral movement.
