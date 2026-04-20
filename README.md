@@ -1,4 +1,4 @@
-# Case Studies 001 - SOC Investigation — Suspicious Login Activity  
+# CASE STUDY 001 - SOC Investigation — Suspicious Login Activity  
 ### **Case Study 001: Unauthorised Access Attempt in Microsoft 365**  
 **Status:** Closed  
 **Severity:** High  
