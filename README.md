@@ -33,6 +33,11 @@ A Brisbane‑based employee’s Microsoft 365 account showed multiple failed log
 
 + Provide remediation and long‑term recommendations
 
+| Name | Role |
+|------|------|
+| Alice | Project Manager |
+| Bob | Developer |
+| Charlie | Tester |
   _____________________  _________________________
 | _____________________ | ________________________ |
 |                       |                          |
