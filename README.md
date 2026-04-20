@@ -163,3 +163,6 @@ README.md
 ---
 
 [← Back to Main Portfolio](https://github.com/barryhuriwaka/cybersecurity-portfolio)
+---
+
+[Next Case Study → Case Study 002 — Business Email Compromise](https://github.com/barryhuriwaka/Business-Email-Compromise)
