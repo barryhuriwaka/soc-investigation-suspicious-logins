@@ -33,7 +33,7 @@ A Brisbane‑based employee’s Microsoft 365 account showed multiple failed log
 
 + Provide remediation and long‑term recommendations
 
-
+  _____________________  _________________________
 | _____________________ | ________________________ |
 |                       |                          |
 |                       |                          |
