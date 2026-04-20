@@ -38,14 +38,14 @@ A Brisbane‑based employee’s Microsoft 365 account showed multiple failed log
 | Alice | Project Manager |
 | Bob | Developer |
 | Charlie | Tester |
-  _____________________  _________________________
-| _____________________ | ________________________ |
-|                       |                          |
-|                       |                          |
-|                       |                          |
-|                       |                          |
-|                       |                          |
-| _____________________ | ________________________ |
+    
+|  user                  | jane.harris@brisbanetech.com.au |
+| --------------------   | ------------------------        |
+|  Normal location       |  Brisbane, Qld                  |
+|    Suspicious location |  Singapore                      |
+|   Time of alert        |  2:14 AEST                      |
+|   Alert source         |  Azure AD identity protection   |
+| Autentication method   |  Password only                  |
 
 
 ## Case Summary
