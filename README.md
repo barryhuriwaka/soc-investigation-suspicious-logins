@@ -52,24 +52,12 @@ A user account belonging to a Brisbane-based employee showed multiple failed log
 ##  Scenario Overview
 A small business uses Microsoft 365 for identity and email. The SOC receives an alert indicating multiple failed login attempts followed by a successful login from an unusual location. The user confirms they were asleep at the time of the successful authentication.
 
-
-### **User & Alert Details**
-
-| Field                   | Details                          |
-|-------------------------|----------------------------------|
-| User                    | jane.harris@brisbanetech.com.au  |
-| Normal Location         | Brisbane, QLD                    |
-| Suspicious Location     | Singapore                        |
-| Time of Alert           | 02:14 AEST                       |
-| Alert Source            | Azure AD Identity Protection     |
-| Authentication Method   | Password only (no MFA)           |
-
-
-
-
-
 ## 🔍 Initial Log Review (Azure Sentinel)
-
+...
+SigninLogs
+| where UserPrincipalName == "jane.harris@brisbanetech.com.au"
+| project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
+...
 
 ### **KQL Query Used**
 ```
