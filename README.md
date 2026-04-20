@@ -34,6 +34,7 @@ A Brisbane‑based employee’s Microsoft 365 account showed multiple failed log
 + Provide remediation and long‑term recommendations
 
  ## User and Alert Details 
+ 
 | Field                  |  Details
 | ---------------------- | ------------------------------- | 
 |  User                  | jane.harris@brisbanetech.com.au |
@@ -44,14 +45,6 @@ A Brisbane‑based employee’s Microsoft 365 account showed multiple failed log
 | Authentication method  |  Password only (no MFA)         |
 
 
-## Case Summary
-A user account belonging to a Brisbane-based employee showed multiple failed login attempts from a foreign IP address, followed by a successful authentication while the user was asleep. The activity originated from Singapore and occurred in the absence of MFA, strongly indicating credential compromise. Immediate containment and investigation actions were required to secure the account and prevent lateral movement.
-
----
-
-##  Scenario Overview
-A small business uses Microsoft 365 for identity and email. The SOC receives an alert indicating multiple failed login attempts followed by a successful login from an unusual location. The user confirms they were asleep at the time of the successful authentication.
-
 ## Initial Log Review (Azure Sentinel)
 
 ### **KQL Query Used**
@@ -60,6 +53,7 @@ SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
 | project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
 ```
+
 ### **Sample Output**
 
 | Time Generated (AEST)     | IP    | Location  | Result | Description | 
@@ -138,52 +132,18 @@ The attacker successfully authenticated and could have accessed email, files, or
 | Account Manipulation |	T1098	| Risk of mailbox rule creation or persistence |
 
 
-
-### Lessons Learned
-   
-Enforce MFA tenant‑wide
-
-Implement conditional access policies
-
-Enable risk‑based sign‑in alerts
-
-Educate users on password hygiene
-
-## Future Enhancements for This Repo
-
-Full SOC investigation template
-
-Triage flowchart
-
-MITRE ATT&CK mapping
-
-KQL cheat sheet
-
-“How to write a SOC case study” guide
-
-Additional scenarios (phishing, malware, insider threat, etc.)
-
 ## 🕒 Timeline of Events
 
 | Time (AEST)            | Event Description                                      |
 |------------------------|--------------------------------------------------------|
-| 02:06:14               | Failed login attempt from Singapore (203.0.113.55)     |
-| 02:06:47               | Failed login attempt from same IP                      |
-| 02:07:12               | Failed login attempt from same IP                      |
-| 02:07:45               | Failed login attempt from same IP                      |
-| 02:14:00 (approx.)     | Successful login from Singapore                        |
-| 08:00                  | User reports they were asleep during the activity      |
-| 08:10                  | SOC initiates investigation and containment actions     |
+| 02:06:14               | Failed login attempt from Singapore                    |
+| 02:06:47               | Failed login attempt from the same IP                  |    |
+| 02:07:12               | Failed login attempt from the same IP                  |
+| 02:07:45               | Failed login attempt from the same IP                  |
+| 02:14:00               | Successful login from Singapore                        |
+| 08:00                  | User reports they were asleep                          |
+| 08:10                  | SOC initiates investigation                            |
 
-## 🧬 MITRE ATT&CK Mapping
-
-| Tactic              | Technique                     | ID        | Relevance to Case                                      |
-|---------------------|-------------------------------|-----------|--------------------------------------------------------|
-| Initial Access      | Valid Accounts                | T1078     | Attacker used compromised credentials to log in        |
-| Credential Access   | Credential Stuffing / Spraying| T1110     | Multiple failed attempts indicate password attacks     |
-| Defense Evasion     | Valid Accounts                | T1078.004 | Successful login using legitimate credentials          |
-| Discovery           | Account Discovery             | T1087     | Possible enumeration attempts prior to login           |
-| Impact (Potential)  | Account Manipulation          | T1098     | Risk of mailbox rule creation or persistence           |
 
 ## 📊 Incident Flow Diagram (Mermaid)
 
@@ -214,6 +174,4 @@ soc-investigation-suspicious-logins/
 └── artifacts/
     └── ioc-list.txt
 ```
-
-
 
