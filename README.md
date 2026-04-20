@@ -1,5 +1,15 @@
 [← Back to Main Portfolio](https://github.com/barryhuriwaka/cybersecurity-portfolio)
 
+<div align="center">
+
+# 🔥 CYBERSECURITY CASE STUDY 001  
+### **Suspicious Login Activity • Identity Threat • Account Compromise**
+
+</div>
+
+---
+
+
 # CASE STUDY 001 — Suspicious Login Activity  
 **Status:** Closed  
 **Severity:** High  
