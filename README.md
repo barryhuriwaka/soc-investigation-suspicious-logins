@@ -19,6 +19,19 @@ This case demonstrates:
 
 5. Containment workflow
    
+## Case Objectives
+
++ Determine whether the login was legitimate or malicious
+
++ Identify the source and method of compromise
+
++ Assess potential lateral movement
+
++ Contain the account and prevent further misuse
+
++ Provide remediation and long‑term recommendations
+   
+   
 ## Case Summary
 A user account belonging to a Brisbane-based employee showed multiple failed login attempts from a foreign IP address, followed by a successful authentication while the user was asleep. The activity originated from Singapore and occurred in the absence of MFA, strongly indicating credential compromise. Immediate containment and investigation actions were required to secure the account and prevent lateral movement.
 
