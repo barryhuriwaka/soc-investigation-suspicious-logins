@@ -64,61 +64,80 @@ SigninLogs
 
 | Time Generated (AEST)     | IP    | Location  | Result | Description | 
 |---------------------------|-------|-----------|--------|-------------|
-| 2024‑11‑12 02:06:14.221 |  203.0.113.55 | Singapore | 50053| Invalid username or password |
-| 2024‑11‑12 02:06:47.902 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
-| 2024‑11‑12 02:07:12.443 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
-| 2024‑11‑12 02:07:45.118 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
+| 02:06:14 |  203.0.113.55 | Singapore | 50053| Invalid username or password |
+| 02:06:47 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
+| 02:07:12 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
+| 02:07:45 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
+| 02:14:00 | 203.0.113.55  | Singapore | 0     | Success |
 
 ## Analyst Assessment
 
 ### Indicators of Compromise
 
-Multiple failed attempts from a foreign IP
++ Multiple failed attempts from a foreign IP
 
-Successful login shortly after repeated failures
++ Successful login shortly after repeated failures
 
-User confirms no activity at that time
++ User confirms no activity at that time
 
-No MFA enabled (high‑risk configuration)
++ No MFA enabled
+
++ High-risk sign-on flagged by identity protection
+  
 
 ### Likely Attack Pattern
 
-This behaviour aligns with:
++ Password spraying
 
-Password spraying
++ Credential stuffing
 
-Credential stuffing
++ Phishing‑derived credentials
 
-Compromised credentials via phishing or breach reuse
+### Risk level: High
 
-## Recommended Immediate Actions
+The attacker successfully authenticated and could have accessed email, files, or attempted lateral movement.
 
-### Containment
- Force password reset for the affected user
+## Containment Actions
+
+### Immediate
+
+ + Forced password reset 
  
- Revoke active sessions in Azure AD
+ + Revoked all active sessions 
  
- Block the suspicious IP address
+ + Blocked the suspicious IP
  
- Enable MFA immediately
+ + Enabled MFA for the user
 
 ### Investigation
 
-Review sign‑in logs for lateral movement
++ Reviewed sign‑in logs for lateral movement
 
-Check mailbox rules for forwarding or deletion
++ Checked mailbox rules for forwarding or deletion
 
-Review audit logs for privilege escalation
++ Reviewed audit logs for privilege escalation
 
-Search for additional failed attempts across tenant
++ Searched for additional failed attempts across the tenant
 
 ### Recovery
 
-Confirm user identity and secure account
++ Verified no unauthorised mailbox rules
 
-Validate no unauthorized changes were made
++ Confirmed no privilege escalation
 
-Re‑enable access with MFA enforced
++ Re‑enabled access with MFA enforced
+
+  ## MITRE ATT&CK Mapping
+
+| Tactic  |  Technique  |  ID  |  Why it applies  |
+|---------|-------------|------|------------------|
+| Valid Accounts  |	T1078	 |  Attacker used compromised credentials to log in  |
+|Password Spraying / Stuffing	| T1110	 | Multiple failed attempts indicate brute‑force patterns |
+|	Valid Accounts  |	T1078.004	|  Successful login using legitimate credentials bypasses detection  |
+| Account Discovery	| T1087	 |  Likely enumeration before login  |
+| Account Manipulation |	T1098	| Risk of mailbox rule creation or persistence |
+
+
 
 ### Lessons Learned
    
