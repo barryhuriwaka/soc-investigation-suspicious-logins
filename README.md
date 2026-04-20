@@ -8,7 +8,7 @@ Severity: High**
 A Brisbane‑based employee’s Microsoft 365 account showed multiple failed login attempts from a foreign IP address (Singapore), followed by a successful authentication while the user was asleep. The pattern strongly indicates credential compromise via password spraying or credential stuffing. Immediate containment actions were taken to secure the account, revoke sessions, and enforce MFA.
 
 
-## This case demonstrates:
+### This case demonstrates:
 
 + Identity‑based threat detection
 
@@ -33,10 +33,10 @@ A Brisbane‑based employee’s Microsoft 365 account showed multiple failed log
 
 + Provide remediation and long‑term recommendations
 
-  
+ ## User and Alert Details 
 | Field                  |  Details
 | ---------------------- | ------------------------------- | 
-|  user                  | jane.harris@brisbanetech.com.au |
+|  User                  | jane.harris@brisbanetech.com.au |
 |  Normal location       |  Brisbane, Qld                  |
 |    Suspicious location |  Singapore                      |
 |   Time of alert        |  2:14 AEST                      |
