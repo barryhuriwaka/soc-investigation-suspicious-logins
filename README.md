@@ -9,15 +9,15 @@ A Brisbane‑based employee’s Microsoft 365 account showed multiple failed log
 
 This case demonstrates:
 
-1. Identity‑based threat detection
++ Identity‑based threat detection
 
-2. KQL log analysis
++ KQL log analysis
 
-3. MITRE ATT&CK mapping
++ MITRE ATT&CK mapping
 
-4. Analyst reasoning
++ Analyst reasoning
 
-5. Containment workflow
++ Containment workflow
    
 ## Case Objectives
 
