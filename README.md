@@ -52,12 +52,7 @@ A user account belonging to a Brisbane-based employee showed multiple failed log
 ##  Scenario Overview
 A small business uses Microsoft 365 for identity and email. The SOC receives an alert indicating multiple failed login attempts followed by a successful login from an unusual location. The user confirms they were asleep at the time of the successful authentication.
 
-## 🔍 Initial Log Review (Azure Sentinel)
-...
-SigninLogs
-| where UserPrincipalName == "jane.harris@brisbanetech.com.au"
-| project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
-...
+## Initial Log Review (Azure Sentinel)
 
 ### **KQL Query Used**
 ```
@@ -67,7 +62,7 @@ SigninLogs
 ```
 ### **Sample Output**
 
-| TimeGenerated (AEST)       | UserPrincipalName               | IPAddress     | Location  | ResultType | ResultDescription            |
+| Time Generated (AEST)     | IP    | Location  | Result | Description            |
 |----------------------------|----------------------------------|---------------|-----------|------------|------------------------------|
 | 2024‑11‑12 02:06:14.221    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
 | 2024‑11‑12 02:06:47.902    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
