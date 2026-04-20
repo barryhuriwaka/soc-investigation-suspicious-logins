@@ -3,7 +3,7 @@
 Status: Closed — Credentials Compromised
 Severity: High**
 
-##Executive Summary##
+## Executive Summary##
 
 A Brisbane‑based employee’s Microsoft 365 account showed multiple failed login attempts from a foreign IP address (Singapore), followed by a successful authentication while the user was asleep. The pattern strongly indicates credential compromise via password spraying or credential stuffing. Immediate containment actions were taken to secure the account, revoke sessions, and enforce MFA.
 
