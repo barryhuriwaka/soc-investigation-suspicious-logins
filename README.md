@@ -1,6 +1,6 @@
 #  SOC Investigation — Suspicious Login Activity
-**Case Study: Unauthorized Access Attempt in Microsoft 365  
-Status: Closed — Credentials Compromised
+**Case Study: Unauthorised Access Attempt in Microsoft 365  
+Status: Closed.  Credentials Compromised
 Severity: High**
 
 ## Executive Summary
