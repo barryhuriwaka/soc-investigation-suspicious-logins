@@ -62,12 +62,12 @@ SigninLogs
 ```
 ### **Sample Output**
 
-| Time Generated (AEST)     | IP    | Location  | Result | Description            |
-|----------------------------|----------------------------------|---------------|-----------|------------|------------------------------|
-| 2024‑11‑12 02:06:14.221    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
-| 2024‑11‑12 02:06:47.902    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
-| 2024‑11‑12 02:07:12.443    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
-| 2024‑11‑12 02:07:45.118    | jane.harris@brisbanetech.com.au | 203.0.113.55  | Singapore | 50053      | Invalid username or password |
+| Time Generated (AEST)     | IP    | Location  | Result | Description | 
+|---------------------------|-------|-----------|--------|-------------|
+| 2024‑11‑12 02:06:14.221 |  203.0.113.55 | Singapore | 50053| Invalid username or password |
+| 2024‑11‑12 02:06:47.902 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
+| 2024‑11‑12 02:07:12.443 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
+| 2024‑11‑12 02:07:45.118 | 203.0.113.55  | Singapore | 50053 | Invalid username or password |
 
 ## Analyst Assessment
 
