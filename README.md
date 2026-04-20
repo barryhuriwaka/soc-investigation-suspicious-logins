@@ -9,7 +9,6 @@
 
 ---
 
-
 # CASE STUDY 001 — Suspicious Login Activity  
 **Status:** Closed  
 **Severity:** High  
@@ -19,18 +18,10 @@
 
 ## 🧭 Executive Summary  
 
-A Brisbane‑based employee’s Microsoft 365 account showed multiple failed login attempts from a foreign IP address (Singapore), followed by a successful authentication while the user was asleep.  
-The pattern strongly indicates credential compromise via password spraying or credential stuffing.
+Azure AD Identity Protection detected multiple failed login attempts from Singapore, followed by a successful authentication while the user was asleep.  
+This behaviour strongly indicates credential compromise via password spraying or credential stuffing.
 
 Immediate containment actions were taken to secure the account, revoke sessions, and enforce MFA.
-
-This case demonstrates:
-
-- Identity‑based threat detection  
-- KQL log analysis  
-- MITRE ATT&CK mapping  
-- Analyst reasoning  
-- Containment workflow  
 
 ---
 
@@ -51,15 +42,22 @@ This case demonstrates:
 | **User** | jane.harris@brisbanetech.com.au |
 | **Normal Location** | Brisbane, QLD |
 | **Suspicious Location** | Singapore |
-| **Time of Alert** | 02:14 AEST |
 | **Alert Source** | Azure AD Identity Protection |
-| **Authentication Method** | Password only (no MFA) |
+| **Authentication** | Password only (no MFA) |
 
 ---
 
-## 📊 Initial Log Review (Azure Sentinel)  
+## 🔍 Initial Indicators  
 
-### KQL Query Used  
+- Multiple failed attempts from a foreign IP  
+- Successful login shortly after repeated failures  
+- User confirms no activity at that time  
+- No MFA enabled  
+- High‑risk sign‑on flagged  
+
+---
+
+## 📊 KQL Queries Used  
 
 ```kusto
 SigninLogs
@@ -67,27 +65,17 @@ SigninLogs
 | project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
 ```
 
-### Sample Output  
-
-| Time (AEST) | IP | Location | Result |
-|-------------|----|----------|--------|
-| 02:06:14 | 203.0.113.55 | Singapore | Invalid password |
-| 02:06:47 | 203.0.113.55 | Singapore | Invalid password |
-| 02:07:12 | 203.0.113.55 | Singapore | Invalid password |
-| 02:07:45 | 203.0.113.55 | Singapore | Invalid password |
-| 02:14:00 | 203.0.113.55 | Singapore | Success |
-
 ---
 
 ## 🧠 Analyst Assessment  
 
 ### Indicators of Compromise  
 
-- Multiple failed attempts from a foreign IP  
-- Successful login shortly after repeated failures  
-- User confirms no activity at that time  
-- No MFA enabled  
-- High‑risk sign‑on flagged by Identity Protection  
+- Foreign login  
+- Multiple failed attempts  
+- Successful login while user asleep  
+- No MFA  
+- High‑risk sign‑in  
 
 ### Likely Attack Pattern  
 
@@ -95,43 +83,26 @@ SigninLogs
 - Credential stuffing  
 - Phishing‑derived credentials  
 
-**Risk Level:** High — attacker successfully authenticated and could have accessed email, files, or attempted lateral movement.
-
 ---
 
 ## 🛡️ Containment Actions  
 
-### Immediate  
-
 - Forced password reset  
 - Revoked all active sessions  
-- Blocked the suspicious IP  
-- Enabled MFA for the user  
-
-### Investigation  
-
-- Reviewed sign‑in logs for lateral movement  
-- Checked mailbox rules for forwarding or deletion  
-- Reviewed audit logs for privilege escalation  
-- Searched for additional failed attempts across the tenant  
-
-### Recovery  
-
-- Verified no unauthorised mailbox rules  
-- Confirmed no privilege escalation  
-- Re‑enabled access with MFA enforced  
+- Blocked suspicious IP  
+- Enabled MFA  
+- Reviewed mailbox rules  
+- Checked for lateral movement  
 
 ---
 
 ## 🧬 MITRE ATT&CK Mapping  
 
-| Tactic | Technique | ID | Reason |
-|--------|-----------|----|--------|
-| Valid Accounts | Compromised Credentials | T1078 | Attacker used stolen credentials |
-| Credential Access | Password Spraying / Stuffing | T1110 | Multiple failed attempts |
-| Valid Accounts | MFA Bypass / Password Only | T1078.004 | Successful login with password only |
-| Discovery | Account Discovery | T1087 | Likely enumeration before login |
-| Persistence | Account Manipulation | T1098 | Risk of mailbox rule creation |
+| Tactic | Technique | ID |
+|--------|-----------|----|
+| Valid Accounts | Compromised Credentials | T1078 |
+| Credential Access | Password Spraying | T1110 |
+| Defense Evasion | MFA Bypass Attempt | T1078.004 |
 
 ---
 
@@ -139,17 +110,14 @@ SigninLogs
 
 | Time | Event |
 |------|--------|
-| 02:06:14 | Failed login attempt from Singapore |
-| 02:06:47 | Failed login attempt |
-| 02:07:12 | Failed login attempt |
-| 02:07:45 | Failed login attempt |
-| 02:14:00 | Successful login |
-| 08:00 | User reports they were asleep |
-| 08:10 | SOC initiates investigation |
+| 02:06 | Failed login from Singapore |
+| 02:14 | Successful login |
+| 08:00 | User reports issue |
+| 08:10 | SOC begins investigation |
 
 ---
 
-## 📁 Repository Structure  
+## 📁 Repo Structure  
 
 ```
 /diagrams
@@ -162,7 +130,6 @@ README.md
 
 ---
 
-[← Back to Main Portfolio](https://github.com/barryhuriwaka/cybersecurity-portfolio)
----
-
 [Next Case Study → Case Study 002 — Business Email Compromise](https://github.com/barryhuriwaka/Business-Email-Compromise)
+[← Back to Main Portfolio](https://github.com/barryhuriwaka/cybersecurity-portfolio)
+
