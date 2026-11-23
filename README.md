@@ -69,13 +69,50 @@ The following query was used to identify failed authentication attempts associat
 ```kusto
 SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
-| where ResultType != 0
+| project
+    TimeGenerated,
+    IPAddress,
+    Location,
+    ResultType,
+    AppDisplayName
+| order by TimeGenerated asc
 ```
 
+### Authentication Failures
+
+| Time (AEST) | Source IP | Location | Result |
+|------------|-----------|----------|---------|
+| 02:06 | 45.77.xxx.xxx | Singapore | Failed |
+| 02:08 | 45.77.xxx.xxx | Singapore | Failed |
+| 02:10 | 45.77.xxx.xxx | Singapore | Failed |
+| 02:14 | 45.77.xxx.xxx | Singapore | Success |
+
+### Summary
+
+- 3 failed authentication attempts observed
+- Successful authentication occurred 8 minutes after initial failures
+- Authentication originated from Singapore
+- User confirmed no travel and no login activity during this period
 This query helped identify repeated authentication failures prior to the successful login.
 
 ---
+## Findings
 
+### Finding 1 - Unusual Geographic Login
+
+User normally authenticates from Brisbane, Australia.
+
+A successful authentication was observed from Singapore, which does not align with the user's historical sign-in pattern.
+
+### Finding 2 - Multiple Authentication Failures
+
+Several failed authentication attempts preceded the successful login.
+
+This pattern is consistent with password spraying or credential stuffing activity.
+
+### Finding 3 - Lack of MFA Protection
+
+The affected account did not have multi-factor authentication enabled, allowing successful access after password compromise.
 ## 🧠 Analyst Assessment  
 
 ### Indicators of Compromise  
