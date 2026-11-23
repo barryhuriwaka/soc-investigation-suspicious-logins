@@ -45,6 +45,14 @@ Immediate containment actions were taken to secure the account, revoke sessions,
 | **Alert Source** | Azure AD Identity Protection |
 | **Authentication** | Password only (no MFA) |
 
+## Authentication Activity
+
+| Time (AEST) | Source IP | Location | Result |
+|------------|------------|----------|----------|
+| 02:06 | 45.77.xxx.xxx | Singapore | Failed |
+| 02:08 | 45.77.xxx.xxx | Singapore | Failed |
+| 02:10 | 45.77.xxx.xxx | Singapore | Failed |
+| 02:14 | 45.77.xxx.xxx | Singapore | Success |
 ---
 
 ## 🔍 Initial Indicators  
@@ -69,18 +77,6 @@ SigninLogs
     AppDisplayName
 | order by TimeGenerated asc
 ```
-
-## Investigation Output
-
-### Authentication Activity
-
-| Time (AEST) | Source IP | Location | Result |
-|-------------|------------|----------|---------|
-| 02:06 | 45.77.xxx.xxx | Singapore | Failed |
-| 02:08 | 45.77.xxx.xxx | Singapore | Failed |
-| 02:10 | 45.77.xxx.xxx | Singapore | Failed |
-| 02:14 | 45.77.xxx.xxx | Singapore | Success |
-
 ### Observations
 
 - Three failed authentication attempts preceded a successful login.
@@ -140,11 +136,10 @@ The affected account did not have multi-factor authentication enabled, allowing 
 ## 🧬 MITRE ATT&CK Mapping  
 
 | Tactic | Technique | ID |
-|--------|-----------|----|
-| Valid Accounts | Compromised Credentials | T1078 |
-| Credential Access | Password Spraying | T1110 |
-| Defense Evasion | MFA Bypass Attempt | T1078.004 |
-
+|----------|----------|----------|
+| Initial Access | Valid Accounts | T1078 |
+| Credential Access | Password Spraying | T1110.003 |
+| Persistence | Valid Accounts | T1078 |
 ---
 
 ## Timeline (AEST)
