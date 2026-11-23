@@ -1,0 +1,3 @@
+SigninLogs
+| where UserPrincipalName == "jane.harris@brisbanetech.com.au"
+| summarize LoginCount=count() by Location
