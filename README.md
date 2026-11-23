@@ -60,8 +60,11 @@ Immediate containment actions were taken to secure the account, revoke sessions,
 ## 📊 Investigation Queries  
 
 The investigation utilised multiple KQL queries to analyse authentication activity.
+
 See the /queries directory for the complete investigation query set.SigninLogs
-Key Query
+
+## Key Query
+
 SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
 | where ResultType != 0
