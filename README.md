@@ -56,17 +56,9 @@ Immediate containment actions were taken to secure the account, revoke sessions,
 - High‑risk sign‑on flagged  
 
 ---
-## 📊 Investigation Queries  
+## Investigation Query
 
-The investigation utilised multiple KQL queries to analyse authentication activity.
-
-See the /queries directory for the complete investigation query set.
-
-## Key Query
-
-The following query was used to identify failed authentication attempts associated with the affected account.
-
-```kusto
+```kql
 SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
 | project
@@ -78,14 +70,23 @@ SigninLogs
 | order by TimeGenerated asc
 ```
 
-### Authentication Failures
+## Investigation Output
+
+### Authentication Activity
 
 | Time (AEST) | Source IP | Location | Result |
-|------------|-----------|----------|---------|
+|-------------|------------|----------|---------|
 | 02:06 | 45.77.xxx.xxx | Singapore | Failed |
 | 02:08 | 45.77.xxx.xxx | Singapore | Failed |
 | 02:10 | 45.77.xxx.xxx | Singapore | Failed |
 | 02:14 | 45.77.xxx.xxx | Singapore | Success |
+
+### Observations
+
+- Three failed authentication attempts preceded a successful login.
+- All authentication attempts originated from the same source IP.
+- The location was inconsistent with the user's normal sign-in activity.
+- The user confirmed no travel or login activity during this period.
 
 ### Summary
 
