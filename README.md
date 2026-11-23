@@ -117,16 +117,8 @@ SigninLogs
 
 ---
 
-## 📁 Repo Structure  
+## <img width="1301" height="2268" alt="image" src="https://github.com/user-attachments/assets/02b9cbdd-c80f-45cf-a4c1-fc2a32312c87" />
 
-```
-/queries
-/logs
-/queries
-/reports
-/artifacts
-README.md
-```
 
 ---
 
