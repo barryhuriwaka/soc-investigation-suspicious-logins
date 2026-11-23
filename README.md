@@ -69,7 +69,8 @@ The following query was used to identify failed authentication attempts associat
 ```kusto
 SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
-| where ResultType != 0```
+| where ResultType != 0
+```
 
 This query helped identify repeated authentication failures prior to the successful login.
 ---
