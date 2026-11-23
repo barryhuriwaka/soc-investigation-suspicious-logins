@@ -179,8 +179,6 @@ No evidence of lateral movement, malicious mailbox rules, or additional account 
 **Case Status:** Closed  
 **Severity:** High
 
-**Severity:** High
-
 [Next Case Study → Case Study 002 — Business Email Compromise](https://github.com/barryhuriwaka/Business-Email-Compromise)
 [← Back to Main Portfolio](https://github.com/barryhuriwaka/cybersecurity-portfolio)
 
