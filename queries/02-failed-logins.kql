@@ -1,0 +1,4 @@
+SigninLogs
+| where UserPrincipalName == "jane.harris@brisbanetech.com.au"
+| where ResultType != 0
+| project TimeGenerated, IPAddress, Location, ResultDescription
