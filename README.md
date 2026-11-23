@@ -72,7 +72,7 @@ SigninLogs
 | where ResultType != 0
 ```
 
-This query helped identify repeated authentication failures prior to the successful login.
+-This query helped identify repeated authentication failures prior to the successful login.
 ---
 
 ## 🧠 Analyst Assessment  
