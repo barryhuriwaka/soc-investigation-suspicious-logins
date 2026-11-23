@@ -120,7 +120,7 @@ SigninLogs
 ## 📁 Repo Structure  
 
 ```
-/diagrams
+/queries
 /logs
 /queries
 /reports
