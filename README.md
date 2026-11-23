@@ -56,6 +56,7 @@ Immediate containment actions were taken to secure the account, revoke sessions,
 - High‑risk sign‑on flagged  
 
 ---
+<img width="2870" height="2268" alt="image" src="https://github.com/user-attachments/assets/10ba6e5b-daf2-49e4-b472-4bc37018837a" />
 
 ## 📊 Investigation Queries  
 
