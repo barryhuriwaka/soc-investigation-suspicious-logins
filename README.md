@@ -88,12 +88,6 @@ SigninLogs
 - The location was inconsistent with the user's normal sign-in activity.
 - The user confirmed no travel or login activity during this period.
 
-### Summary
-
-- 3 failed authentication attempts observed
-- Successful authentication occurred 8 minutes after initial failures
-- Authentication originated from Singapore
-- User confirmed no travel and no login activity during this period
 This query helped identify repeated authentication failures prior to the successful login.
 
 ---
@@ -153,17 +147,38 @@ The affected account did not have multi-factor authentication enabled, allowing 
 
 ---
 
-## 🕒 Timeline (AEST)  
+## Timeline (AEST)
 
 | Time | Event |
-|------|--------|
-| 02:06 | Failed login from Singapore |
-| 02:14 | Successful login |
-| 08:00 | User reports issue |
-| 08:10 | SOC begins investigation |
+|--------|----------|
+| 02:06 | Failed authentication from Singapore |
+| 02:08 | Additional failed authentication attempt |
+| 02:10 | Third failed authentication attempt |
+| 02:14 | Successful authentication from Singapore |
+| 08:00 | User reports suspicious activity |
+| 08:10 | SOC investigation initiated |
+| 08:25 | Active sessions revoked |
+| 08:30 | Password reset completed |
+| 08:35 | MFA enabled |
+| 08:45 | Investigation closed |
 
 ---
+## Final Assessment
 
+The investigation determined the account was likely compromised through password spraying, credential stuffing, or the use of previously exposed credentials.
+
+Evidence supporting this assessment included:
+
+- Multiple failed login attempts from a foreign location
+- Successful authentication from the same source IP
+- User confirmation that no login activity occurred at the time
+- Absence of multi-factor authentication
+
+No evidence of lateral movement, malicious mailbox rules, or additional account compromise was identified.
+
+**Case Status:** Closed
+
+**Severity:** High
 
 [Next Case Study → Case Study 002 — Business Email Compromise](https://github.com/barryhuriwaka/Business-Email-Compromise)
 [← Back to Main Portfolio](https://github.com/barryhuriwaka/cybersecurity-portfolio)
