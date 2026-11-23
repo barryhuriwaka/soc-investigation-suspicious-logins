@@ -1,7 +1,5 @@
 [← Back to Main Portfolio](https://github.com/barryhuriwaka/cybersecurity-portfolio)
 
-<div align="center">
-
 # 🔥 CYBERSECURITY CASE STUDY 001
 
 ## Suspicious Login Activity
