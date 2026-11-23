@@ -1,0 +1,4 @@
+SigninLogs
+| where UserPrincipalName == "jane.harris@brisbanetech.com.au"
+| summarize LoginAttempts=count() by IPAddress
+| order by LoginAttempts desc
