@@ -1,0 +1,4 @@
+SigninLogs
+| where UserPrincipalName == "jane.harris@brisbanetech.com.au"
+| project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
+| order by TimeGenerated asc
