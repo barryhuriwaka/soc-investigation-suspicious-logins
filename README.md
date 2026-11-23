@@ -57,13 +57,14 @@ Immediate containment actions were taken to secure the account, revoke sessions,
 
 ---
 
-## 📊 KQL Queries Used  
+## 📊 Investigation Queries  
 
-```kusto
+The investigation utilised multiple KQL queries to analyse authentication activity.
+See the /queries directory for the complete investigation query set.SigninLogs
+Key Query
 SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
-| project TimeGenerated, UserPrincipalName, IPAddress, Location, ResultType, ResultDescription
-```
+| where ResultType != 0
 
 ---
 
