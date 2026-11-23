@@ -56,19 +56,19 @@ Immediate containment actions were taken to secure the account, revoke sessions,
 - High‑risk sign‑on flagged  
 
 ---
-<img width="2870" height="2268" alt="image" src="https://github.com/user-attachments/assets/10ba6e5b-daf2-49e4-b472-4bc37018837a" />
-
 ## 📊 Investigation Queries  
 
 The investigation utilised multiple KQL queries to analyse authentication activity.
 
-See the /queries directory for the complete investigation query set.SigninLogs
+See the /queries directory for the complete investigation query set.
 
 ## Key Query
 
-SigninLogs
+The following query was used to identify failed authentication attempts associated with the affected account.
+
+'''SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
-| where ResultType != 0
+| where ResultType != 0'''
 
 ---
 
