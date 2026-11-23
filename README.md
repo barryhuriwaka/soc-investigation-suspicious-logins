@@ -117,10 +117,6 @@ SigninLogs
 
 ---
 
-## <img width="1301" height="2268" alt="image" src="https://github.com/user-attachments/assets/02b9cbdd-c80f-45cf-a4c1-fc2a32312c87" />
-
-
----
 
 [Next Case Study → Case Study 002 — Business Email Compromise](https://github.com/barryhuriwaka/Business-Email-Compromise)
 [← Back to Main Portfolio](https://github.com/barryhuriwaka/cybersecurity-portfolio)
