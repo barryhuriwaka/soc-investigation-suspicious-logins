@@ -66,7 +66,7 @@ See the /queries directory for the complete investigation query set.
 
 The following query was used to identify failed authentication attempts associated with the affected account.
 
-'''kusto
+```kusto
 SigninLogs
 | where UserPrincipalName == "jane.harris@brisbanetech.com.au"
 | where ResultType != 0'''
